@@ -19,12 +19,12 @@ yLength = 3
 slices = xLength * yLength
 
 
-SR_path = "./MFAE_4DImages/MFAE_4DImages_11/"
+SR_path = "./Test_Interpolation/"
 
 SR_imgs = os.listdir(SR_path)
 #SR_imgs = sorted(glob(SR_path))
 
-SR_imgs.sort(key=lambda f: int(''.join(filter(str.isdigit, f))))
+#SR_imgs.sort(key=lambda f: int(''.join(filter(str.isdigit, f))))
 
 
 

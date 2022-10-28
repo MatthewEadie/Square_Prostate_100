@@ -78,9 +78,8 @@ def Interpolation(image):
 
 
 
-testing_datasets = sorted(glob("./image_datasets/imagedata_testing*"))
+testing_datasets = sorted(glob("./image_comparison/image_datasets/imagedata_testing*"))
 
-imageNo = 0
 
 save_dir = "./Test_Interpolation/"
 
@@ -88,7 +87,7 @@ if not os.path.isdir(save_dir):
         os.mkdir(save_dir)
 
 print("Creating testing slices from test originals")
-for image_path in testing_datasets:
+for imageNo,image_path in enumerate(testing_datasets):
 #Load in original images
 #image_path = Test_images[0]
     image = cv2.imread(image_path + "/LR0.png")

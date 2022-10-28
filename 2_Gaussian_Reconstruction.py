@@ -42,14 +42,12 @@ def Normalisation(image):
 
 
 
-testing_datasets = sorted(glob("./image_datasets/imagedata_testing*"))
-
-imageNo = 0
+testing_datasets = sorted(glob("./image_comparison/image_datasets/imagedata_testing*"))
 
 save_dir = "./Test_Gaussian/"
 
 print("Creating testing slices from test originals")
-for image_path in testing_datasets:
+for imageNo,image_path in enumerate(testing_datasets):
 #Load in original images
 #image_path = Test_images[0]
     dataset_image = cv2.imread(image_path + "/LR0.png")
@@ -57,8 +55,6 @@ for image_path in testing_datasets:
     norm_img = Normalisation(dataset_image)
 
     cv2.imwrite(save_dir + f'TestImage{imageNo}.png', norm_img)
-
-    imageNo += 1
 
 
 cv2.waitKey(0)
